@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "extra-enchants",
+	"version": "${version}",
+	"name": "Extra Enchants",
+	"description": "Extra enchants",
+	"authors": [
+		"Boros"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/extra-enchants/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.boros41.ExtraEnchants"
+		],
+		"client": [
+			"com.github.boros41.ExtraEnchantsClient"
+		]
+	},
+	"mixins": [
+		"extra-enchants.mixins.json",
+		{
+			"config": "extra-enchants.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
