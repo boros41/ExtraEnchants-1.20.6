@@ -34,6 +34,8 @@ public class ExtraEnchants implements ModInitializer {
 		// Proceed with mild caution.
 		LOGGER.info("Registering Mod Items for " + MOD_ID);
 
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.addAfter(Items.ENCHANTED_BOOK, STRENGTH_SCROLL));
+		// register strength_scroll item in the ingredients creative tab after the enchanted books
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> content.addAfter(Items.ENCHANTED_BOOK, STRENGTH_SCROLL));
+		LOGGER.info("Successfully registered strength_scroll");
 	}
 }
