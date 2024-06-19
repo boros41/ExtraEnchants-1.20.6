@@ -2,6 +2,9 @@ package com.github.boros41;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -19,8 +22,9 @@ public class ExtraEnchants implements ModInitializer {
 	public static final Item STRENGTH_SCROLL =
 			Registry.register(
 					Registries.ITEM,
-					new Identifier("scroll", "strength_scroll"),
+					new Identifier(MOD_ID, "strength_scroll"),
 					new Item(new Item.Settings()));
+
 
 
 	@Override
@@ -28,6 +32,8 @@ public class ExtraEnchants implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Registering Mod Items for " + MOD_ID);
+
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.addAfter(Items.ENCHANTED_BOOK, STRENGTH_SCROLL));
 	}
 }
