@@ -1,3 +1,4 @@
 {
-  "item.extra-enchants.strength_scroll": "Strength Scroll"
+  "item.extra-enchants.strength_scroll": "Strength Scroll",
+  "item.extra-enchants.strength_scroll.tooltip": "A scroll made of fabric"
 }

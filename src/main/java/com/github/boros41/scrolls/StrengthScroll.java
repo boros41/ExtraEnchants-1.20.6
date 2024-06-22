@@ -1,6 +1,7 @@
 package com.github.boros41.scrolls;
 
 import com.github.boros41.ExtraEnchants;
+import net.minecraft.client.item.TooltipType;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +14,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import net.minecraft.text.Text;
+
+import java.util.List;
 
 public class StrengthScroll extends Item {
     public static final Item STRENGTH_SCROLL =
@@ -35,6 +39,12 @@ public class StrengthScroll extends Item {
         ItemStack itemStack = user.getStackInHand(hand);
         itemStack.decrement(1);
         return TypedActionResult.consume(itemStack);
+    }
+
+    // https://fabricmc.net/wiki/tutorial:tooltip
+    @Override
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("item.extra-enchants.strength_scroll.tooltip"));
     }
 
     @Override
