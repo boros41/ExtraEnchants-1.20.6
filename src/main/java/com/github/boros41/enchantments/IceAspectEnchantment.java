@@ -37,7 +37,10 @@ public class IceAspectEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if (target instanceof LivingEntity) {
+        final double[] PERCENT_CHANCES = {5, 7.5, 10};
+        final double percent = PERCENT_CHANCES[level - 1];
+
+        if (target instanceof LivingEntity && ExtraEnchants.isEnchantSuccessful(percent)) {
             // amplifier is one less than the displayed level of effect
             ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, level * ExtraEnchants.ONE_SECOND, level - 1));
         }
