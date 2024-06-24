@@ -1,5 +1,6 @@
 {
   "item.extra-enchants.strength_scroll": "Strength Scroll",
   "item.extra-enchants.strength_scroll.tooltip": "A scroll made of fabric",
-  "enchantment.extra-enchants.ice_aspect_enchantment": "Ice Aspect"
+  "enchantment.extra-enchants.ice_aspect_enchantment": "Ice Aspect",
+  "enchantment.extra-enchants.gears_enchantment": "Gears"
 }

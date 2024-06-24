@@ -1,5 +1,6 @@
 package com.github.boros41;
 
+import com.github.boros41.enchantments.GearsEnchantment;
 import com.github.boros41.enchantments.IceAspectEnchantment;
 import com.github.boros41.scrolls.StrengthScroll;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -23,6 +24,12 @@ public class ExtraEnchantsRegistries {
                     new Identifier("extra-enchants","ice_aspect_enchantment"),
                     new IceAspectEnchantment()
             );
+    public static final Enchantment GEARS_ENCHANTMENT =
+            Registry.register(
+                    Registries.ENCHANTMENT,
+                    new Identifier("extra-enchants","gears_enchantment"),
+                    new GearsEnchantment()
+            );
 
     public static void registerMod() {
         ExtraEnchants.LOGGER.info("Registering all mods for " + ExtraEnchants.MOD_ID);
@@ -32,5 +39,6 @@ public class ExtraEnchantsRegistries {
         ExtraEnchants.LOGGER.info("Successfully registered " + STRENGTH_SCROLL + " to creative ingredients tab");
 
         ExtraEnchants.LOGGER.info("Successfully registered " + ICE_ASPECT_ENCHANTMENT);
+        ExtraEnchants.LOGGER.info("Successfully registered " + GEARS_ENCHANTMENT);
     }
 }

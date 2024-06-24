@@ -1,5 +1,6 @@
 {
   "item.extra-enchants.strength_scroll": "Pergamino de Fuerza",
   "item.extra-enchants.strength_scroll.tooltip": "Un pergamino de tela",
-  "enchantment.extra-enchants.ice_aspect_enchantment": "Aspecto de Hielo"
+  "enchantment.extra-enchants.ice_aspect_enchantment": "Aspecto de Hielo",
+  "enchantment.extra-enchants.gears_enchantment": "Engranajes"
 }
