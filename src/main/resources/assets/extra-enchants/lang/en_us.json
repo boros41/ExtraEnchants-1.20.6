@@ -2,5 +2,9 @@
   "item.extra-enchants.strength_scroll": "Strength Scroll",
   "item.extra-enchants.strength_scroll.tooltip": "A scroll made of fabric",
   "enchantment.extra-enchants.ice_aspect_enchantment": "Ice Aspect",
-  "enchantment.extra-enchants.gears_enchantment": "Gears"
+  "enchantment.extra-enchants.gears_enchantment": "Gears",
+  "enchantment.extra-enchants.obsidianshield_enchantment": "Obsidianshield",
+  "enchantment.extra-enchants.drunk_enchantment": "Drunk",
+  "enchantment.extra-enchants.overload_enchantment": "Overload",
+  "enchantment.extra-enchants.blessed_enchantment": "Blessed"
 }

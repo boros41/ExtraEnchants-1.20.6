@@ -30,13 +30,13 @@ public class GearsEnchantmentMixin {
 
 		switch (enchantmentLevel) {
 			case 1:
-				wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20, 0));
+				wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 0, 0));
 				break;
 			case 2:
-				wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20, 1));
+				wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 0, 1));
 				break;
 			case 3:
-				wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20, 2));
+				wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 0, 2));
 				break;
 
 		}

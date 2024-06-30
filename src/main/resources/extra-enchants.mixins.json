@@ -3,7 +3,10 @@
 	"package": "com.github.boros41.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"GearsEnchantmentMixin"
+		"DrunkEnchantmentMixin",
+		"GearsEnchantmentMixin",
+		"ObsidianshieldEnchantmentMixin",
+		"OverloadEnchantmentMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -2,5 +2,9 @@
   "item.extra-enchants.strength_scroll": "Pergamino de Fuerza",
   "item.extra-enchants.strength_scroll.tooltip": "Un pergamino de tela",
   "enchantment.extra-enchants.ice_aspect_enchantment": "Aspecto de Hielo",
-  "enchantment.extra-enchants.gears_enchantment": "Engranajes"
+  "enchantment.extra-enchants.gears_enchantment": "Engranajes",
+  "enchantment.extra-enchants.obsidianshield_enchantment": "Escudo de Obsidiana",
+  "enchantment.extra-enchants.drunk_enchantment": "Borracho",
+  "enchantment.extra-enchants.overload_enchantment": "Sobrecarga",
+  "enchantment.extra-enchants.blessed_enchantment": "Bendecido"
 }
