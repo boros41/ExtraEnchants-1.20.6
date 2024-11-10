@@ -1,12 +1,16 @@
 package com.github.boros41.enchantments;
 
 import com.github.boros41.ExtraEnchants;
+import com.github.boros41.access.LivingEntityAccess;
+import com.github.boros41.mixin.BlessedEnchantmentMixin;
+import com.github.boros41.mixin.DrunkEnchantmentMixin;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.MutableText;
@@ -16,7 +20,7 @@ import net.minecraft.util.Formatting;
 import java.util.*;
 
 public class BlessedEnchantment extends Enchantment {
-    public static boolean isDrunkBlessed;
+    private static boolean blessed;
 
     public BlessedEnchantment() {
         super(Enchantment.properties(
@@ -30,6 +34,8 @@ public class BlessedEnchantment extends Enchantment {
         ));
     }
 
+
+
     // cannot be obtained from an enchanting table
     @Override
     public boolean isTreasure() {
@@ -38,6 +44,9 @@ public class BlessedEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
+        final double[] PERCENT_CHANCES = {2, 4, 6, 8};
+        final double percent = PERCENT_CHANCES[level - 1];
+
         Collection<StatusEffectInstance> statusEffectInstances = user.getStatusEffects();
         List<StatusEffectInstance> harmfulEffects = statusEffectInstances.stream()
                                                                          .filter(statusEffectInstance -> statusEffectInstance.getEffectType()
@@ -46,14 +55,24 @@ public class BlessedEnchantment extends Enchantment {
                                                                                                                              .equals(StatusEffectCategory.HARMFUL))
                                                                                                                              .toList();
 
-        ExtraEnchants.LOGGER.info(harmfulEffects.toString());
 
 
-        for (StatusEffectInstance harmfulEffect : harmfulEffects) {
-            user.removeStatusEffect(harmfulEffect.getEffectType());
+        if (ExtraEnchants.isEnchantSuccessful(percent)) {
+            blessed = true;
+            for (StatusEffectInstance harmfulEffect : harmfulEffects) {
+                //((LivingEntityAccess) user).setBlessed(true); // remove debuffs from drunk enchantment to not potentially conflict with other debuffed enchantments
+                user.removeStatusEffect(harmfulEffect.getEffectType());
+                ExtraEnchants.LOGGER.info("Blessed! Removing: " + harmfulEffect + " from " + user);
+            }
         }
+    }
 
-        isDrunkBlessed = true; // remove debuffs from drunk enchantment to not potentially conflict with other debuffed enchantments
+    public static boolean isBlessed() {
+        return blessed;
+    }
+
+    public static void setBlessed(boolean bool) {
+        blessed = bool;
     }
 
     // called when Minecraft needs to display the name of the enchantment such as when hovering a sword with the enchantment
