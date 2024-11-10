@@ -1,14 +1,15 @@
 {
-	"required": true,
-	"package": "com.github.boros41.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"DrunkEnchantmentMixin",
-		"GearsEnchantmentMixin",
-		"ObsidianshieldEnchantmentMixin",
-		"OverloadEnchantmentMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "com.github.boros41.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlessedEnchantmentMixin",
+    "DrunkEnchantmentMixin",
+    "GearsEnchantmentMixin",
+    "ObsidianshieldEnchantmentMixin",
+    "OverloadEnchantmentMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }
