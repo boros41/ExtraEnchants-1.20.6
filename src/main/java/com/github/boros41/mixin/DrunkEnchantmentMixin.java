@@ -28,39 +28,55 @@ public class DrunkEnchantmentMixin {
                 if (!BlessedEnchantment.isBlessed()) {
                     wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 0, 0));
                     wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 0, 0));
+                    wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 0));
+                } else {
+                    BlessedEnchantment.setBlessed(true);
+                    wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 0));
                 }
-                livingEntityAccess.setBlessed(true);
-                wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 0));
+                //livingEntityAccess.setBlessed(true);
+                //wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 0));
                 break;
             case 2:
                 if (!BlessedEnchantment.isBlessed()) {
                     wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 0, 1));
                     wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 0, 1));
+                    wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 1));
+                } else {
+                    BlessedEnchantment.setBlessed(true);
+                    wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 1));
                 }
-                livingEntityAccess.setBlessed(true);
-                wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 1));
+                //livingEntityAccess.setBlessed(true);
+                //wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 1));
                 break;
             case 3:
                 if (!BlessedEnchantment.isBlessed()) {
                     wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 0, 2));
                     wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 0, 2));
+                    wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 2));
+                } else {
+                    BlessedEnchantment.setBlessed(true);
+                    wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 2));
                 }
-                livingEntityAccess.setBlessed(true);
-                wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 2));
+                //livingEntityAccess.setBlessed(true);
+                //wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 2));
                 break;
             case 4:
                 if (!BlessedEnchantment.isBlessed()) {
                     wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 0, 3));
                     wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 0, 3));
+                    wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 3));
                     ExtraEnchants.LOGGER.info("Not Blessed! Adding: " + StatusEffects.SLOWNESS + "for " + wearer);
                     ExtraEnchants.LOGGER.info("Not Blessed! Adding: " + StatusEffects.MINING_FATIGUE + "for " + wearer);
+                } else {
+                    BlessedEnchantment.setBlessed(true);
+                    wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 3));
                 }
-                livingEntityAccess.setBlessed(true);
-                wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 3));
+                //livingEntityAccess.setBlessed(true);
+                //wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 3));
                 break;
             default:
                 BlessedEnchantment.setBlessed(false);
-                livingEntityAccess.setBlessed(false);
+                //livingEntityAccess.setBlessed(false);
                 ExtraEnchants.LOGGER.info("No Drunk equipped. Setting blessed to false for " + wearer);
                 break;
         }
