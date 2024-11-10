@@ -71,7 +71,7 @@ public class DrunkEnchantmentMixin {
                     BlessedEnchantment.setBlessed(true);
                     wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 3));
                 }
-                //livingEntityAccess.setBlessed(true);/
+                //livingEntityAccess.setBlessed(true);
                 //wearer.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 0, 3));
                 break;
             default:
